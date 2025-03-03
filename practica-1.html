@@ -1,0 +1,79 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://kit.fontawesome.com/b1473ebfe8.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="body-practicas">
+
+    <header>
+        <img class="logo" src="img/nodejs.svg" alt="Node.js Logo">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="practica-1.html"><i class="fa-solid fa-code"></i> Practica 1</a></li>
+                <li><a href="practica-2.html"><i class="fa-solid fa-code"></i> Practica 2</a></li>
+                <li><a href="practica-3.html"><i class="fa-solid fa-code"></i> Practica 3</a></li>
+                <li><a href="#examples">Ejemplos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-practica-1">
+        <h1>Hola Mundo con un Servidor Web (Usando HTTP)</h1>
+
+        <div class="code-container">
+            <p>Este ejemplo crea un servidor en Node.js que responde con "Hola Mundo" en el navegador.</p>
+            <div class="container-btn-copy">
+                <button class="copy-btn" onclick="copiarTexto('codigo1', this)">Copiar</button>
+            </div>
+            <pre><code id="codigo1" class="language-javascript">
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("¡Hola Mundo desde Node.js!");
+});
+
+server.listen(3000, () => {
+    console.log("Servidor corriendo en http://localhost:3000");
+});
+            </code></pre>
+        </div>
+
+        
+        <div class="container-code">
+            <p>Ejecutarlo en la terminal:</p>
+        <div class="code-container">
+            <div class="container-btn-copy">
+                <button class="copy-btn" onclick="copiarTexto('codigo2', this)">Copiar</button>
+            </div>
+            <pre><code id="codigo2" class="language-bash">node server.js</code></pre>
+        </div>  
+    </div>  
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Documentación Node.js - Creado con ❤️</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script>
+        function copiarTexto(id, boton) {
+            const codigo = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(codigo).then(() => {
+                boton.textContent = "¡Copiado!";
+                setTimeout(() => {
+                    boton.textContent = "Copiar";
+                }, 1500);
+            }).catch(err => {
+                console.error("Error al copiar: ", err);
+            });
+        }
+    </script>
+</body>
+</html>

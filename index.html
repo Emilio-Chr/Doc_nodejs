@@ -5,30 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nodejs</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b1473ebfe8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <img class="logo" src="img/nodejs.svg" alt="">
-        <nav class="navbar">
-            <ul class="menu">
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#api-reference">API Reference</a></li>
-                <li><a href="#examples">Examples</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="cssportal-grid">
-        <div class="div1">div1</div>
-        <div class="div2">div2</div>
+
+<div class="parent">
+    <div class="div1">
+        <img src="img/nodejs.svg" alt="">
+    </div>
+    <div class="div2">
+        <div class="div2-text">
+        <h2>Practicas Del Curso</h2>
+        <a href="practica-1.html" class="div2-btn"><i class="fa-solid fa-code"></i> Practica 1</a>
+        <a href="practica-2.html" class="div2-btn"><i class="fa-solid fa-code"></i> Practica 2</a>
+        <a href="practica-3.html" class="div2-btn"><i class="fa-solid fa-code"></i> Practica 3</a>
+    </div>
+    </div>
+    <div class="div3">
+        <div class="content-div3">
+        <div class="div3-title">
+            <h1>¿Que es Node.js?</h1>
+        </div>
+        <div class="div3-text">
+            <p>Node.js es un entorno de ejecución de JavaScript que se utiliza para crear aplicaciones web desde el servidor. Es una plataforma multiplataforma, de código abierto y gratuita.</p>
+        </div>
+    </div>
     </div>
 
-    <div class="cssportal-grid-2">
-        <div class="div3">div1</div>
-        <div class="div4">div2</div>
-        <div class="div5">div3</div>
-        <div class="div6">div4</div>
+    <div class="div4">
+        <div class="div4-card">
+        <div class="div4-title">
+            <h2>Historia de Node.js</h2>
+        </div>
+        <img src="img/rayan dahi.png" alt="">
     </div>
+        <div class="div4-info">
+            <h1>Historia de Node.js</h1>
+            <div class="timeline">
+                <div class="event">
+                    <span class="date">2009</span>
+                    <p>La historia de Node.js comienza en 2009 cuando su autor, Ryan Dahl, presentó por primera vez esta plataforma en la conferencia JSConf EU.</p>
+                </div>
+                <div class="event">
+                    <span class="date">27 de mayo de 2009</span>
+                    <p>Dahl presentó oficialmente Node.js como un entorno de tiempo de ejecución de JavaScript de código abierto en el lado del servidor.</p>
+                </div>
+                <div class="event">
+                    <span class="date">Problema a resolver</span>
+                    <p>Buscaba una forma de crear servidores web en tiempo real altamente escalables, ya que Apache HTTP Server tenía problemas para manejar muchas conexiones simultáneas.</p>
+                </div>
+                <div class="event">
+                    <span class="date">Plataformas iniciales</span>
+                    <p>Inicialmente, Node.js solo funcionaba en Linux y Mac OS X.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="div5">
+        <div class="div5-content">
+            <div>
+            <h2>Download Nodejs</h2> 
+            <div class="btn-div5">
+                <button class="btn" id="openModal"><i class="fa-solid fa-download"></i> Download</button> 
+            </div>
+            </div>  
+        </div>
+    </div>
+    <div class="div6">
+        <div class="div6-content">
+            <div>
+                <h1>page creators</h1>
+            <div class="btn-div6">
+                <a target="_blank"  href="https://github.com/Emilio-Chr" class="btn-git">
+                    <i class="fa-brands fa-github"></i>
+                    <p>Emilio-Chr</p>
+                </a>
+                <a target="_blank"  href="https://github.com/GiovannCode" class="btn-git">
+                    <i class="fa-brands fa-github"></i>
+                    <p>GiovannCode</p>
+                </a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="div7">
+            <div class="dot"></div>
+            <div class="card">
+                <div class="ray"></div>
+                <div class="text">6.3M</div>
+                <div>Users</div>
+                <div class="line topl"></div>
+                <div class="line leftl"></div>
+                <div class="line bottoml"></div>
+                <div class="line rightl"></div>
+            </div>
+    </div>
+</div>
+    
+
+<div id="downloadModal" class="modal">
+    <img src="img/idk-angry-emoji.gif" alt="">
+    <div class="modal-content">
+        <div>
+        <h3>Descarga en progreso...</h3>
+        <p>Ya No Lo Descargo Por Que Leo Ya Lo Hizo.</p>
+        <button class="close-btn" id="closeModal">Cerrar</button>
+    </div>
+    </div>
+</div>
+
+<script>
+    const openModalBtn = document.getElementById("openModal");
+    const closeModalBtn = document.getElementById("closeModal");
+    const modal = document.getElementById("downloadModal");
+
+    openModalBtn.addEventListener("click", function() {
+        modal.style.display = "flex";
+
+    });
+
+    closeModalBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>
