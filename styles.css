@@ -690,10 +690,9 @@ header {
     padding: 0;
 }
 
-
 .container-practica-1 {
-    width: 70%;
-    min-height: 700px;
+    width: 60%;
+    min-height: 200px;
     border-radius: 20px;
     background: linear-gradient(145deg, #1a1a1a, #161616);
     box-shadow:  5px 5px 10px #0a0a0a,
@@ -713,19 +712,11 @@ header {
 .code-container {
     position: relative;
     border-radius: 8px;
-    margin-bottom: 15px;
     overflow: hidden;
     width: 100%;
     margin: auto;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
-}
-
-pre {
-    color: #000000;
-    font-size: 14px;
-    overflow-x: auto;
-    margin: 0;
 }
 
 
@@ -751,6 +742,14 @@ pre {
     color: #83cd26;
 }
 
+.container-btn-copy p{
+    color: #83cd26;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    line-height: 50px;
+}
 
 .container-en-construccion{
     width: 100%;
