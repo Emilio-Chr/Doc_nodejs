@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 2</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="body-practicas">
     <header>
         <img class="logo" src="img/nodejs.svg" alt="Node.js Logo">
@@ -19,11 +21,208 @@
         </nav>
     </header>
 
-    <div class="container-en-construccion">
+
+
+    <body class="body-practicas">
+
+
+        <main class="container-practica-1">
+            <h1>Conexion a mysql + CRUD con Express y Node.js</h1>
+            <div class="code-container">
+                <p>Inicializar un proyecto con NPM</p>
+                <div class="container-btn-copy">
+                    <p>sh</p>
+                    <button class="copy-btn" onclick="copiarTexto('codigo01', this)">Copiar</button>
+                </div>
+                <pre><code id="codigo01" class="language-bash">
+npm init -y
+            </code></pre>
+            </div>
+        </main>
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Credenciales a la base de datos (insertarlas en el archivo .env)</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo3" class="language-javascript">
+#Credenciales de acceso a la base de datos
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=crud_node
+DB_PORT=3306
+                
+            </code></pre>
+                </div>
+            </div>
+        </main>
+
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Configuracion principal del index.js</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo3" class="language-javascript">
+//Cargamos express
+const express = require('express');
+const app = express();
+const connection = require('./db');
+const dotenv = require('dotenv');
+const path = require('path');
+                
+            </code></pre>
+                </div>
+            </div>
+        </main>
+
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Servir archivos estaticos</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo3" class="language-javascript">
+app.use(express.static(path.join(__dirname, 'public')));
+            </code></pre>
+                </div>
+            </div>
+        </main>
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Ruta raiz para servir el archivo HTML</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo3" class="language-javascript">
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+                    </code></pre>
+                </div>
+            </div>
+        </main>
+
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Instalar EJS</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo3" class="language-javascript">
+npm install ejs
+
+                    </code></pre>
+                </div>
+            </div>
+        </main>
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Configuracion de la plantilla en el index</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo3" class="language-javascript">
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+                    </code></pre>
+                </div>
+            </div>
+        </main>
+
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Iniciar el servidor</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo3" class="language-javascript">
+const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+        console.log(`Servidor corriendo en el puerto ${port}`);
+});
+                    </code></pre>
+                </div>
+            </div>
+        </main>
+
+        
+
+        
+
+        <main class="container-practica-1">
+            <div class="code-container">
+                <p>Ejecutar el servidor.</p>
+                <div class="container-btn-copy">
+                    <p>sh</p>
+                    <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                </div>
+                <pre><code id="codigo3" class="language-bash">
+node index.js
+        </code></pre>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Documentación Node.js - Creado con ❤️</p>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script>
+            function copiarTexto(id, boton) {
+                const codigo = document.getElementById(id).innerText;
+                navigator.clipboard.writeText(codigo).then(() => {
+                    boton.textContent = "¡Copiado!";
+                    setTimeout(() => {
+                        boton.textContent = "Copiar";
+                    }, 1500);
+                }).catch(err => {
+                    console.error("Error al copiar: ", err);
+                });
+            }
+        </script>
+    </body>
+
+    </html>
+
+
+    <!-- <div class="container-en-construccion">
         <div>
         <img src="img/ZSj2.gif" alt="">
         <h1>En Construccion</h1>
         </div>
-    </div>
+    </div> -->
 </body>
+
 </html>
