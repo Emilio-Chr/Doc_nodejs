@@ -176,6 +176,45 @@ const port = process.env.PORT || 3000;
                 </div>
             </div>
         </main>
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Eliminar registros con el email</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo100', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo100" class="language-javascript">
+app.get('/users/delete', (req, res) => {
+    const email = req.query.email;
+                        
+    // Verificar que el email esté presente
+    if (!email) {
+        return res.status(400).send('Falta el email');
+    }
+                        
+    // Consulta SQL para eliminar el usuario por email
+    const query = 'DELETE FROM usuarios WHERE email = ?';
+    connection.query(query, [email], (err, results) => {
+        if (err) {
+            console.error('Error al eliminar el usuario:', err);
+            return res.status(500).send('Error en la base de datos');
+            }
+                        
+        if (results.affectedRows === 0) {
+            return res.status(404).send('Usuario no encontrado');
+        }
+                        
+        res.send('Usuario eliminado');
+    });
+});
+                        
+                    </code></pre>
+                </div>
+            </div>
+        </main>
 
         
 
