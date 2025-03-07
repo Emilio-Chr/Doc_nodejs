@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 2</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://kit.fontawesome.com/b1473ebfe8.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="body-practicas">
@@ -255,39 +258,39 @@ app.post('/users/update', (req, res) => {
         <main class="container-practica-1">
 
 
-            <div class="container-code">
-                <p>Archivo view.ejs</p>
-                <div class="code-container">
-                    <div class="container-btn-copy">
-                        <p>js</p>
-                        <button class="copy-btn" onclick="copiarTexto('codigo900', this)">Copiar</button>
-                    </div>
-                    <pre><code id="codigo900" class="language-javascript">
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="es"&gt;
-            &lt;head&gt;
-                &lt;meta charset="UTF-8"&gt;
-                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                &lt;title&gt;Ver Usuarios&lt;/title&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-                &lt;h1&gt;Lista de Usuarios&lt;/h1&gt;
-                &lt;table border="1"&gt;
-                    &lt;tr&gt;
-                        &lt;th&gt;Nombre&lt;/th&gt;
-                        &lt;th&gt;Email&lt;/th&gt;
-                        &lt;th&gt;Contraseña&lt;/th&gt;
-                    &lt;/tr&gt;
-                    &lt;% users.forEach(function(user) { %&gt;
-                        &lt;tr&gt;
-                            &lt;td&gt;&lt;%= user.name %&gt;&lt;/td&gt;
-                            &lt;td&gt;&lt;%= user.email %&gt;&lt;/td&gt;
-                            &lt;td&gt;&lt;%= user.pass %&gt;&lt;/td&gt;
-                        &lt;/tr&gt;
-                    &lt;% }); %&gt;
-                &lt;/table&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;
+<div class="container-code">
+    <p>Archivo view.ejs</p>
+    <div class="code-container">
+        <div class="container-btn-copy">
+            <p>js</p>
+            <button class="copy-btn" onclick="copiarTexto('codigo900', this)">Copiar</button>
+        </div>
+        <pre><code id="codigo900" class="language-javascript">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ver Usuarios&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Lista de Usuarios&lt;/h1&gt;
+    &lt;table border="1"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Nombre&lt;/th&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+            &lt;th&gt;Contraseña&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;% users.forEach(function(user) { %&gt;
+                &lt;tr&gt;
+                &lt;td&gt;&lt;%= user.name %&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;%= user.email %&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;%= user.pass %&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;% }); %&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
                     </code></pre>
                 </div>
             </div>
@@ -330,14 +333,5 @@ node index.js
     </body>
 
 </html>
-
-
-<!-- <div class="container-en-construccion">
-        <div>
-        <img src="img/ZSj2.gif" alt="">
-        <h1>En Construccion</h1>
-        </div>
-    </div> -->
 </body>
-
 </html>
