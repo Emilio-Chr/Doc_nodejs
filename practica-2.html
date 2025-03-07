@@ -165,9 +165,9 @@ app.set('views', path.join(__dirname, 'views'));
                 <div class="code-container">
                     <div class="container-btn-copy">
                         <p>js</p>
-                        <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
+                        <button class="copy-btn" onclick="copiarTexto('codigo200', this)">Copiar</button>
                     </div>
-                    <pre><code id="codigo3" class="language-javascript">
+                    <pre><code id="codigo200" class="language-javascript">
 const port = process.env.PORT || 3000;
     app.listen(port, () => {
         console.log(`Servidor corriendo en el puerto ${port}`);
@@ -190,7 +190,7 @@ const port = process.env.PORT || 3000;
 app.get('/users/delete', (req, res) => {
     const email = req.query.email;
                         
-    // Verificar que el email esté presente
+    // Verificar el email 
     if (!email) {
         return res.status(400).send('Falta el email');
     }
@@ -214,11 +214,64 @@ app.get('/users/delete', (req, res) => {
                     </code></pre>
                 </div>
             </div>
+
+        </main>
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Update de usuarios</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo700', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo700" class="language-javascript">
+//Update
+app.post('/users/update', (req, res) => {
+    const { email, name, pass } = req.body;
+    if (!email || !name || !pass) {
+        return res.status(400).send('Faltan datos');
+    }
+
+    const query = 'UPDATE usuarios SET name = ?, pass = ? WHERE email = ?';
+    connection.query(query, [name, pass, email], (err, results) => {
+        if (err) {
+            return res.status(500).send('Error en la base de datos');
+        }
+
+        if (results.affectedRows === 0) {
+            return res.status(404).send('Usuario no encontrado');
+        }
+
+        res.send('Usuario actualizado');
+    });
+});           
+                    </code></pre>
+                </div>
+            </div>
         </main>
 
-        
+        <main class="container-practica-1">
 
-        
+
+            <div class="container-code">
+                <p>Archivo view.ejs</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo700', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo700" class="language-javascript">
+           
+                    </code></pre>
+                </div>
+            </div>
+        </main>
+
+
+
+
 
         <main class="container-practica-1">
             <div class="code-container">
@@ -253,10 +306,10 @@ node index.js
         </script>
     </body>
 
-    </html>
+</html>
 
 
-    <!-- <div class="container-en-construccion">
+<!-- <div class="container-en-construccion">
         <div>
         <img src="img/ZSj2.gif" alt="">
         <h1>En Construccion</h1>
