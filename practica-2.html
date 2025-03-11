@@ -254,6 +254,37 @@ app.post('/users/update', (req, res) => {
                 </div>
             </div>
         </main>
+        <main class="container-practica-1">
+
+
+            <div class="container-code">
+                <p>Update de usuarios</p>
+                <div class="code-container">
+                    <div class="container-btn-copy">
+                        <p>js</p>
+                        <button class="copy-btn" onclick="copiarTexto('codigo4000', this)">Copiar</button>
+                    </div>
+                    <pre><code id="codigo4000" class="language-javascript">
+app.get('/users/view', (req, res) => {
+    const query = 'SELECT * FROM usuarios'; // Asumiendo que tu tabla se llama 'usuarios'
+                        
+    connection.query(query, (err, results) => {
+        if (err) {
+            return res.status(500).send('Error al obtener usuarios');
+        }
+                        
+        // Si encuentras usuarios, los envías a la vista
+        if (results.length > 0) {
+            res.render('view', { users: results }); // 'view' es el nombre del archivo EJS
+        } else {
+            res.send('No hay usuarios registrados');
+        }
+    });
+});      
+                    </code></pre>
+                </div>
+            </div>
+        </main>
 
         <main class="container-practica-1">
 
@@ -299,18 +330,6 @@ app.post('/users/update', (req, res) => {
 
 
 
-        <main class="container-practica-1">
-            <div class="code-container">
-                <p>Ejecutar el servidor.</p>
-                <div class="container-btn-copy">
-                    <p>sh</p>
-                    <button class="copy-btn" onclick="copiarTexto('codigo3', this)">Copiar</button>
-                </div>
-                <pre><code id="codigo3" class="language-bash">
-node index.js
-        </code></pre>
-            </div>
-        </main>
 
         <footer>
             <p>&copy; 2025 Documentación Node.js - Creado con ❤️</p>
